@@ -27,11 +27,13 @@ fit the user's needs based on their input during signup. They can choose which p
       <% @user.each do |person|  %>
         <% if match == person.id %>
           <%= person.name %>
+          <%= person.description %>
         <% end %>
       <% end %>
     <% end %>
+    <%= pair.text_area :message, :cols => "100", :rows => "10" %>
 
-    <% pair.hidden_field(:user_id, :value => current_user.id) %> 
+    <% pair.hidden_field(:user_id, :value => current_user.id) %>
   <% end %>
 
 </body>
