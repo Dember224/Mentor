@@ -18,23 +18,29 @@
 
 </head>
 <body>
-
+  <div class="container" >
 <!-- This is more logic than I'd like in the view. Remember to refactor later. This will show optional mentors/mentees that
 fit the user's needs based on their input during signup. They can choose which person they'd like to match with using a radio button. -->
-  <%= form_for(@pair) do |pair| %>
-    <% options.each do |match| %>
-      <%= pair.radio_button(:mentee_id, match) %>
-      <% @user.each do |person|  %>
-        <% if match == person.id %>
-          <%= person.name %>
-          <%= person.description %>
+
+    <%= form_for(@pair) do |pair| %>
+      <% options.each do |match| %>
+      <div class="row">
+        <%= pair.radio_button(:mentee_id, match) %>
+      </div>
+        <% @user.each do |person|  %>
+          <% if match == person.id %>
+          <div class="row">
+            <%= person.name %>
+            <%= person.description %>
+          </div>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-    <%= pair.text_area :message, :cols => "100", :rows => "10" %>
+      <%= pair.text_area :message, :cols => "100", :rows => "10" %>
 
-    <% pair.hidden_field(:user_id, :value => current_user.id) %>
-  <% end %>
+      <% pair.hidden_field(:user_id, :value => current_user.id) %>
+    <% end %>
+</div>
 
 </body>
 </html>
