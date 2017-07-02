@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get '/pairs' => 'pairs#new'
+  post 'pairs' => 'pairs#create'
 
 end

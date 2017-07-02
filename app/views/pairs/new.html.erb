@@ -31,14 +31,23 @@ fit the user's needs based on their input during signup. They can choose which p
           <% if match == person.id %>
           <div class="row">
             <%= person.name %>
+          </div>
+          <div class="row">
             <%= person.description %>
           </div>
+          <% end %>
+          <% choosen.each do |picked| %>
+            <% if picked == person.id %>
+              <%= image_tag "hand.png" %>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
       <%= pair.text_area :message, :cols => "100", :rows => "10" %>
 
-      <% pair.hidden_field(:user_id, :value => current_user.id) %>
+      <%=
+       pair.hidden_field :user_id, :value => current_user.id %>
+      <%= pair.submit "Request Mentorship", class: "btn-submit" %>
     <% end %>
 </div>
 

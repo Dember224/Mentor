@@ -3,10 +3,12 @@ class PairsController < ApplicationController
   def new
     @pair = Pair.new
     @user = User.all
+    @pair_collection = Pair.all
   end
 
   def create
     @pair = Pair.new(pair_params)
+    @pair.save
   end
 
 #options method is intended to produce matches in the same profession but with the opposite expertise so experts and beginners are paired.
@@ -26,8 +28,20 @@ class PairsController < ApplicationController
 
   helper_method :options
 
+  def choosen
+    @pair = []
+    for pair in @pair_collection do
+      if pair.mentee_id == current_user.id
+        @pair.push(pair.user_id)
+      end
+    end
+    return @pair
+  end
+
+  helper_method :choosen
+private
   def pair_params
-    params.require(:pair).permit(:user_id, :mentee, :message)
+    params.require(:pair).permit(:user_id, :mentee_id, :message)
   end
 
 end
