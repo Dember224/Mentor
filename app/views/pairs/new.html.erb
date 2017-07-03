@@ -24,6 +24,7 @@ fit the user's needs based on their input during signup. They can choose which p
 
     <%= form_for(@pair) do |pair| %>
       <% options.each do |match| %>
+      <div class="choice">
       <div class="row">
         <%= pair.radio_button(:mentee_id, match) %>
       </div>
@@ -37,16 +38,17 @@ fit the user's needs based on their input during signup. They can choose which p
           </div>
           <% end %>
           <% choosen.each do |picked| %>
-            <% if picked == person.id %>
-              <%= image_tag "hand.png" %>
+            <% if picked == match %>
+              <%= image_tag "hand.png", class: "hand_shake" %>
             <% end %>
           <% end %>
         <% end %>
+        </div>
       <% end %>
+
       <%= pair.text_area :message, :cols => "100", :rows => "10" %>
 
-      <%=
-       pair.hidden_field :user_id, :value => current_user.id %>
+      <%= pair.hidden_field :user_id, :value => current_user.id %>
       <%= pair.submit "Request Mentorship", class: "btn-submit" %>
     <% end %>
 </div>
