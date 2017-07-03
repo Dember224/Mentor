@@ -28,6 +28,7 @@ class PairsController < ApplicationController
 
   helper_method :options
 
+#The choosen method checks to see if anyone else has choosen you as a potential mentor/mentee
   def choosen
     @pair = []
     for pair in @pair_collection do
@@ -39,6 +40,33 @@ class PairsController < ApplicationController
   end
 
   helper_method :choosen
+#This method gives all potential mentees that the current user has choosen
+  def users_choices
+    @pair = []
+    for pair in @pair_collection do
+      if current_user.id == pair.user_id
+        @pair.push(pair.mentee_id)
+      end
+    end
+    return @pair
+  end
+
+helper_method :users_choices
+
+#This method finds users who have agreed upon a mentor mentee relationship
+  def agreed
+    @pair = []
+    users_choices.each do |picked|
+      for pair in @pair_collection do
+        if picked == pair.user_id && pair.mentee_id == current_user.id
+          @pair.push(pair.mentee_id)
+      end
+    end
+    return @pair
+  end
+
+helper_method :agreed
+
 private
   def pair_params
     params.require(:pair).permit(:user_id, :mentee_id, :message)
