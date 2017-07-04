@@ -40,29 +40,24 @@ class PairsController < ApplicationController
   end
 
   helper_method :choosen
-#This method gives all potential mentees that the current user has choosen
-  def users_choices
-    @pair = []
-    for pair in @pair_collection do
-      if current_user.id == pair.user_id
-        @pair.push(pair.mentee_id)
-      end
-    end
-    return @pair
-  end
-
-helper_method :users_choices
 
 #This method finds users who have agreed upon a mentor mentee relationship
   def agreed
     @pair = []
-    users_choices.each do |picked|
-      for pair in @pair_collection do
-        if picked == pair.user_id && pair.mentee_id == current_user.id
-          @pair.push(pair.mentee_id)
+    @choosen = []
+    for pair in Pair.all
+      if pair.user_id == current_user.id
+        @choosen.push(pair.mentee_id)
       end
     end
-    return @pair
+
+    for picked in @choosen
+      Pair.all.each do |p|
+        if p.user_id == picked && p.mentee_id == current_user.id
+          @pair.push(p.user_id)
+        end
+      end
+    end
   end
 
 helper_method :agreed
