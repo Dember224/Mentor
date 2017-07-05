@@ -18,6 +18,18 @@
 
 </head>
 <body>
-  <%= agreed %>
+  <% if agreed.length > 0 %>
+    <h1>Congratulations you've matched!</h>
+    <% agreed.each do |match| %>
+      <% User.all.each do |user| %>
+        <%if match == user.id %>
+          <a href="/message">Chat with your match</a>
+          <%= user.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <p> Sorry, it seems like you don't have any matches yet.</p> <a href="/pairs">Request more mentors?</a>
+  <% end %>
 </body>
 </html>
