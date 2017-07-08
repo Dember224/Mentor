@@ -43,13 +43,14 @@ class PairsController < ApplicationController
 
 #This method finds users who have agreed upon a mentor mentee relationship
   def agreed
-    @pair = []
     @choosen = []
     for pair in Pair.all
       if pair.user_id == current_user.id
         @choosen.push(pair.mentee_id)
       end
     end
+    return @choosen
+  end
 
     for picked in @choosen
       Pair.all.each do |p|
