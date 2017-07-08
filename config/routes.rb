@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get '/pairs' => 'pairs#new'
   post 'pairs' => 'pairs#create'
-  get '/message' => 'message#new'
-  get 'message' => 'message#create'
+  get '/message' => 'messages#new'
+  post 'message' => 'messages#create'
+  resources :messages
 
 end
