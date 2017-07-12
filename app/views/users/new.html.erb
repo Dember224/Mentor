@@ -22,17 +22,21 @@
 <body>
   <div class="container">
     <%= form_for(@user) do |user| %>
-      <%= user.text_field :name, :placeholder => 'Your Name' %>
+      <%= user.text_field :name, :placeholder => 'Your username' %>
       <%= user.email_field :email, :placeholder => 'Email' %>
       <%= user.password_field :password, :placeholder => 'Password' %>
 
       <div class="row">
+        <div class="btn-group" data-toggle="radio">
         <h1>Are you looking to be a mentor, or to find one?</h1>
         <div class="col-xs-6 col-md-6">
-          <%= user.radio_button(:expertise, 'Expert') %><p>I'd like to give back and be a mentor.</p>
+          <%= user.radio_button(:expertise, 'Expert', :id => "user[expertise]") %>
+          <label for="user[expertise]" class = "btn btn-success" >Expert</label>
         </div>
         <div class="col-xs-6 col-md-6">
-          <%= user.radio_button(:expertise, 'Beginner') %> <p>I'm looking for someone to give me advice.</p>
+          <%= user.radio_button(:expertise, 'Beginner') %>
+          <%= user.label :expertise, "Beginner", :value => "Beginner", :class => "btn btn-success" %>
+        </div>
         </div>
       </div>
 
