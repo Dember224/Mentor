@@ -4,5 +4,20 @@
 document.addEventListener("turbolinks:load",function() {
   $('#identity').click(function() {
     $('#expertise').css("display","inline-block")
+    $('#two').css("display","none")
+    });
+
+    $('#expertise').click(function() {
+      $('#description').css("display","inline-block")
+      $('#three').css("display","none")
+    });
+
+    $('#description').click(function() {
+      $('#career').css("display", "block")
+      $('#four').css("display","none")
+    });
+
+    $('#career').click(function() {
+      $('#submit').css("display", "block")
     });
   });
