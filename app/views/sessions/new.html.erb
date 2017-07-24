@@ -20,14 +20,15 @@
 </head>
 <body>
   <div class="container">
+    <h1>Pay It Forward</h1>
     <%= form_for(:session, url: login_path) do |user| %>
       <%= user.email_field :email, :placeholder => 'Email' %>
       <%= user.password_field :password, :placeholder => 'Password' %>
 
-      <%= user.submit "Login", :class => "btn-submit" %>
+      <%= user.submit "Login", :class => "btn btn-success" %>
       <% end %>
 
-      <%= image_tag "mentor.png", :class => "mentor" %>
+      <%= image_tag "help.jpg", :class => "mentee" %>
   </div>
 </body>
 </html>

@@ -49,8 +49,6 @@ class PairsController < ApplicationController
         @choosen.push(pair.mentee_id)
       end
     end
-    return @choosen
-  end
 
     for picked in @choosen
       Pair.all.each do |p|

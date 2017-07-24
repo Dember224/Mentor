@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   get '/message' => 'messages#new'
   post 'message' => 'messages#create'
   resources :messages
+  get '/resume' => 'resumes#new'
+  post 'resume' => 'resumes#create'
+  resources :resumes
 
 end
