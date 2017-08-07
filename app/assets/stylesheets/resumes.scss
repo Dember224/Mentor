@@ -1,3 +1,114 @@
 // Place all the styles related to the resumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//general stuff
+.level {
+  background-color: #449D44;
+  margin-top:0px;
+  margin-bottom:0px;
+  border-radius: 90%;
+}
+
+//high school stuff
+#high_school {
+  margin-bottom: 2%;
+  display: none;
+}
+
+#title_high_school {
+  display: none;
+}
+
+//undergrad stuff
+#undergrad {
+  display: none;
+}
+
+#title_undergrad {
+  display: none;
+  margin-top: 5%;
+}
+
+#resume_second_undergrad_major {
+  display: none;
+}
+
+#resume_first_undergrad_minor {
+  display: none;
+}
+
+#resume_second_undergrad_minor {
+  display: none;
+}
+
+#resume_third_undergrad_minor {
+  display: none;
+}
+
+#first_minor {
+
+}
+
+#second_minor {
+  display: none;
+}
+
+#third_minor {
+  display: none;
+}
+
+#second_university {
+  display: none;
+}
+
+//advanced degree stuff
+#advanced_degree {
+  display: none;
+}
+
+#title_advanced_degree {
+  display: none;
+  margin-top: 5%;
+}
+
+#graduate_studies {
+  display: none;
+}
+
+//job and career stuff
+#jobs {
+  display: none;
+}
+
+#title_jobs {
+  display: none;
+  margin-top: 5%;
+}
+
+#volunteer {
+  display: none;
+}
+
+#title_volunteer {
+  display: none;
+  margin-top: 5%;
+}
+
+#certs {
+  display: none;
+}
+
+#title_cert {
+  display: none;
+}
+
+//hobies
+#hobby {
+  display: none;
+}
+
+#title_hobby {
+  display: none;
+  margin-top: 5%;
+}

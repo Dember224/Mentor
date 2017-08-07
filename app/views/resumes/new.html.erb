@@ -19,56 +19,95 @@
 </head>
 
 <body>
+
+  <%= image_tag "mentor.png", :class => "mentor" %>
+
   <div class="container">
+    <div class="row">
+      <p>Click the title to of each resume item you'd like to submit.</p>
+      <p>Potential matches will get a better idea of your compatibility.</p>
+      <p>If a title doesn't apply to you just don't click/leave it empty.</p>
+      <p>When you're finished press submit at the bottom of your screen.</p>
+    </div>
     <%= form_for(@resume) do |resume| %>
+    <div class="level" id="hs">
+      <h2>High School</h2>
+    </div>
+    <h1 id='title_high_school'>High School</h1>
     <div class="row" id="high_school">
       <%= resume.hidden_field :user_id, :value => current_user.id %>
-      <div class="col-xs-3 col-md-3">
-        <p>High school: <%= resume.text_area :high_school, :cols => '10', :rows => '1' %></p>
-        <p>Class of: <%= resume.number_field :hs_class, max: 2017, min: 1917 %></p>
-        <p>Sport: <%= resume.text_area :first_sport, :cols => "10", :rows => "1" %></p>
+      <div class="col-xs-4 col-md-4">
+        <p><%= resume.text_area :high_school, placeholder: "High School Name", :cols => '15', :rows => '1' %></p>
+        <p><%= resume.number_field :hs_class, max: 2017, min: 1917, :cols => '20', :rows => '1', placeholder: "Class of" %></p>
       </div>
-      <div class="col-xs-3 col-md-3">
-        <p>Sport: <%= resume.text_area :second_sport, :cols => "10", :rows => "1" %></p>
-        <p>Sport: <%= resume.text_area :third_sport, :cols => "10", :rows => "1" %></p>
-        <p>Extracurricular: <%= resume.text_area :first_hs_organization, :cols => "10", :rows => "1" %></p>
+      <div class="col-xs-4 col-md-4">
+        <p><%= resume.text_area :first_sport, :cols => "10", :rows => "1", placeholder: "Sport played" %></p>
+        <p><%= resume.text_area :second_sport, :cols => "10", :rows => "1", placeholder: "Sport played" %></p>
+        <p><%= resume.text_area :third_sport, :cols => "10", :rows => "1", placeholder: "Sport played" %></p>
+
     </div>
-    <div class="col-xs-3 col-md-3">
-      <p>Extracurricular: <%= resume.text_area :second_hs_organization, :cols => "10", :rows => "1" %></p>
+    <div class="col-xs-4 col-md-4">
+      <p><%= resume.text_area :first_hs_organization, :cols => "10", :rows => "1", placeholder: "Organization" %></p>
+      <p><%= resume.text_area :second_hs_organization, :cols => "10", :rows => "1", placeholder: "Organization" %></p>
     </div>
 
     </div>
 
+    <div class="level" id='ug'>
+      <h2>Undergraduate</h2>
+    </div>
+    <h1 id='title_undergrad'>Undergraduate</h1>
     <div class="row" id="undergrad">
-      <%= resume.text_area :undergrad_uni, :cols => "10", :rows => "1" %>
+      <div class="row">
+      <%= resume.text_area :undergrad_uni, :cols => "10", :rows => "1", placeholder: "University" %>
       <div class="btn-group" data-toggle="radio">
+        <p>Which type of degree?
         <%= resume.radio_button(:undergrad_degree_type, 'Bachelors') %>
         <label for="resume_undergrad_degree_type_bachelors" class="btn btn-success" >Bachelors</label>
         <%= resume.radio_button(:undergrad_degree_type, 'Associates') %>
         <label for="resume_undergrad_degree_type_associates" class="btn btn-success" >Associates</label>
+        </p>
       </div>
-      <%= resume.number_field :undergrad_class, max: 2017, min: 1917 %>
-      <%= resume.text_field :first_undergrad_major, :cols => "10", :rows => "1" %>
-      <%= resume.text_field :second_undergrad_major, :cols => "10", :rows => "1" %>
-      <%= resume.text_field :first_undergrad_minor, :cols => "10", :rows => "1" %>
-      <%= resume.text_field :second_undergrad_minor, :cols => "10", :rows => "1" %>
-      <%= resume.text_field :third_undergrad_minor, :cols => "10", :rows => "1" %>
+      <%= resume.number_field :undergrad_class, max: 2017, min: 1917, placeholder: "Class" %>
+      <%= resume.text_field :first_undergrad_major, :cols => "10", :rows => "1", placeholder: "Major" %>
+      <button class="btn-success" id="more_majors">Have more majors?</button>
+        <%= resume.text_field :second_undergrad_major, :cols => "10", :rows => "1", placeholder: "Second Major" %>
 
-      <%= resume.text_field :second_undergrad_uni, :cols => "10", :rows => "1" %>
+      <div class="row">
+        <button class="btn btn-success" id="first_minor">Have minors?</button>
+      <%= resume.text_field :first_undergrad_minor, :cols => "10", :rows => "1", placeholder: "Minor" %>
+      <button class="btn btn-success" id="second_minor">Another minor?</button>
+      <%= resume.text_field :second_undergrad_minor, :cols => "10", :rows => "1", placeholder: "Second Minor" %>
+      <button class="btn btn-success" id="third_minor">Another minor?</button>
+      <%= resume.text_field :third_undergrad_minor, :cols => "10", :rows => "1", placeholder: "Third Minor" %>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn btn-success" id="new_uni">Went back to undergrad?</button>
+    </div>
+      <div class ="row" id="second_university">
+      <%= resume.text_field :second_undergrad_uni, :cols => "10", :rows => "1", placeholder: "University" %>
       <div class="btn-group" data-toggle="radio">
+        <p>Which type of degree?
         <%= resume.radio_button(:second_undergrad_degree_type, 'Bachelors') %>
         <label for="resume_second_undergrad_degree_type_bachelors" class="btn btn-success">Bachelors</label>
         <%= resume.radio_button(:second_undergrad_degree_type, 'Associates') %>
         <label for="resume_second_undergrad_degree_type_associates" class="btn btn-success">Associates</label>
+        </p>
       </div>
-      <%= resume.number_field :second_undergrad_class, max: 2017, min: 1917 %>
-      <%= resume.text_field :second_undergrad_major, :cols => "10", :rows => "1" %>
-
-      <%= resume.text_field :first_campus_organization, :cols => "10", :rows => "1" %>
-      <%= resume.text_field :second_campus_organization, :cols => "10", :rows => "1" %>
+      <%= resume.number_field :second_undergrad_class, max: 2017, min: 1917, placeholder: "Class" %>
+      <%= resume.text_field :second_undergrad_major, :cols => "10", :rows => "1", placeholder: "Major" %>
     </div>
+      <%= resume.text_field :first_campus_organization, :cols => "10", :rows => "1", placeholder: "Organization" %>
+      <%= resume.text_field :second_campus_organization, :cols => "10", :rows => "1", placeholder: "Organization" %>
 
+    </div>
+    <div class="level" id='advanced'>
+      <h2>Advanced Degree</h2>
+    </div>
+    <h1 id="title_advanced_degree">Advanced Degree</h1>
     <div class="row" id="advanced_degree">
+      <p>Degree Type</p>
       <div class="row">
       <%= resume.radio_button(:advanced_degree_type, 'M.D.') %>
       <label for="resume_advanced_degree_type_md" class="btn btn-success">MD</label>
@@ -94,10 +133,15 @@
       <label for="resume_advanced_degree_type_mba" class="btn btn-success">M.B.A</label>
       </div>
 
-    <%= resume.text_field :advanced_degree_major, :cols => "10", :rows => "1" %>
-    <%= resume.text_field :advanced_degree_uni, :cols => "10", :rows => "1" %>
-    <%= resume.number_field :advanced_degree_class, max: 2017, min: 1917 %>
+    <%= resume.text_field :advanced_degree_major, :cols => "10", :rows => "1", placeholder: "Major" %>
+    <%= resume.text_field :advanced_degree_uni, :cols => "10", :rows => "1", placeholder: "University" %>
+    <%= resume.number_field :advanced_degree_class, max: 2017, min: 1917, placeholder: "Class" %>
 
+    <div class="row">
+      <button class="btn btn-success" id="second_graduate">Another advanced degree?</button>
+    </div>
+    <div id="graduate_studies">
+    <p>Degree Type</p>
     <div class="row">
       <%= resume.radio_button(:second_advanced_degree_type, 'M.D.') %>
       <label for="resume_second_advanced_degree_type_md" class="btn btn-success">MD</label>
@@ -123,54 +167,82 @@
       <label for="resume_second_advanced_degree_type_mba" class="btn btn-success">M.B.A</label>
     </div>
 
-    <%= resume.text_field :second_advanced_degree_uni, :cols => '10', :rows => '1' %>
-    <%= resume.text_field :second_advanced_degree_major, :cols => '10', :rows => '1' %>
-    <%= resume.number_field :second_advanced_degree_class, max: 2017, min: 1917 %>
+    <%= resume.text_field :second_advanced_degree_uni, :cols => '10', :rows => '1', placeholder: "University" %>
+    <%= resume.text_field :second_advanced_degree_major, :cols => '10', :rows => '1', placeholder:"Major" %>
+    <%= resume.number_field :second_advanced_degree_class, max: 2017, min: 1917, placeholder: "Class" %>
+  </div>
     </div>
-
+    <div class="level" id="work">
+      <h2>Work History</h2>
+    </div>
+    <h1 id="title_jobs">Work History</h1>
     <div class="row" id="jobs">
       <div class="row" id="first_job">
-        <%= resume.text_field :first_company_name, :cols => '10', :rows => '1' %>
-        <%= resume.text_field :first_job_title, :cols => '10', :rows => '1' %>
-        <%= resume.date_field :first_job_start_date %>
+        <%= resume.text_field :first_company_name, :cols => '10', :rows => '1', placeholder: "Company Name" %>
+        <%= resume.text_field :first_job_title, :cols => '10', :rows => '1', placeholder: "Job Title" %>
+        start date:
+        <%= resume.date_field :first_job_start_date  %>
+        end date:
         <%= resume.date_field :first_job_end_date %>
       </div>
       <div class="row" id="second_job">
-        <%= resume.text_field :second_company_name, :cols => '10', :rows => '1' %>
-        <%= resume.text_field :second_job_title, :cols => '10', :rows => '1' %>
+        <%= resume.text_field :second_company_name, :cols => '10', :rows => '1', placeholder: "Company Name" %>
+        <%= resume.text_field :second_job_title, :cols => '10', :rows => '1', placeholder: "Job Title" %>
+        start date:
         <%= resume.date_field :second_job_start_date %>
+        end date:
         <%= resume.date_field :second_job_end_date %>
       </div>
       <div class="row" id="third_job">
-        <%= resume.text_field :third_company_name, :cols => '10', :rows => '1' %>
-        <%= resume.text_field :third_job_title, :cols => '10', :rows => '1' %>
+        <%= resume.text_field :third_company_name, :cols => '10', :rows => '1', placeholder: "Company Name" %>
+        <%= resume.text_field :third_job_title, :cols => '10', :rows => '1', placeholder: "Job Title" %>
+        start date:
         <%= resume.date_field :third_job_start_date %>
+        end date:
         <%= resume.date_field :third_job_end_date %>
       </div>
       <div class="row" id="fourth_job">
-        <%= resume.text_field :fourth_company_name, :cols => '10', :rows => '1' %>
-        <%= resume.text_field :fourth_job_title, :cols => '10', :rows => '1' %>
+        <%= resume.text_field :fourth_company_name, :cols => '10', :rows => '1', placeholder: "Company Name" %>
+        <%= resume.text_field :fourth_job_title, :cols => '10', :rows => '1', placeholder: "Job Title" %>
+        start date:
         <%= resume.date_field :fourth_job_start_date %>
+        end date:
         <%= resume.date_field :fourth_job_end_date %>
       </div>
+
+      <div class="level" id="voluntary">
+        <h2>Volunteer Work</h2>
+      </div>
+      <h1 id="title_volunteer">Volunteer Work</h1>
       <div class="row" id="volunteer">
-        <%= resume.text_field :first_volunteer_organization, :cols => '10', :rows => '1' %>
-        <%= resume.text_field :second_volunteer_organization, :cols => '10', :rows => '1' %>
-        <%= resume.text_field :third_volunteer_organization, :cols => '10', :rows => '1' %>
+        <%= resume.text_field :first_volunteer_organization, :cols => '10', :rows => '1', placeholder: "Organization"  %>
+        <%= resume.text_field :second_volunteer_organization, :cols => '10', :rows => '1', placeholder: "Organization" %>
+        <%= resume.text_field :third_volunteer_organization, :cols => '10', :rows => '1', placeholder: "Organization" %>
       </div>
     </div>
 
+    <div class="level" id="certified">
+      <h2>Certifications</h2>
+    </div>
+    <h1 id="title_cert">Certifications</h1>
     <div class="row" id="certs">
-      <%= resume.text_field :first_certification, :cols => '10', :rows => '1' %>
-      <%= resume.text_field :second_certification, :cols => '10', :rows => '1' %>
-      <%= resume.text_field :third_certification, :cols => '10', :rows => '1' %>
+      <%= resume.text_field :first_certification, :cols => '10', :rows => '1', placeholder: "Certification" %>
+      <%= resume.text_field :second_certification, :cols => '10', :rows => '1', placeholder: "Certification" %>
+      <%= resume.text_field :third_certification, :cols => '10', :rows => '1', placeholder: "Certification" %>
     </div>
 
-    <div class="row" id="hobby">
-      <%= resume.text_field :first_hobby, :cols => '10', :rows => '1' %>
-      <%= resume.text_field :second_hobby, :cols => '10', :rows => '1' %>
-      <%= resume.text_field :third_hobby, :cols => '10', :rows => '1' %>
+    <div class="level" id="hobbies">
+      <h2>Hobbies</h2>
     </div>
+
+    <h1 id="title_hobby">Hobbies</h1>
+    <div class="row" id="hobby">
+      <%= resume.text_field :first_hobby, :cols => '10', :rows => '1', placeholder: "Hobby" %>
+      <%= resume.text_field :second_hobby, :cols => '10', :rows => '1', placeholder: "Hobby" %>
+      <%= resume.text_field :third_hobby, :cols => '10', :rows => '1', placeholder: "Hobby" %>
+    </div>
+
+    <%= resume.submit "Submit", class: "btn btn-success" %>
     <% end %>
 
 

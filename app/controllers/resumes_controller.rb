@@ -6,6 +6,7 @@ class ResumesController < ApplicationController
 
   def create
     @resume = Resume.new(resume_params)
+    @resume.save
   end
 
   private
