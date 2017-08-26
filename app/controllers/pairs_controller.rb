@@ -188,7 +188,7 @@ class PairsController < ApplicationController
           if resume.first_certification != nil && resume.first_certification != "" #[25]
             @show_resume.push("Certified in: 1) #{resume.first_certification}")
           else
-            show_resume.push("")
+            @show_resume.push("")
           end
 
           if resume.second_certification != nil && resume.second_certification != "" #[26]
@@ -217,6 +217,42 @@ class PairsController < ApplicationController
 
           if resume.third_hobby != nil && resume.second_hobby != "" #[30]
             @show_resume.push("3) #{resume.third_hobby}")
+          else
+            @show_resume.push("")
+          end
+
+          if resume.advanced_degree_uni != nil && resume.advanced_degree_uni != "" #[31]
+            @show_resume.push("Advanced Degree(s)")
+          else
+            @show_resume.push("")
+          end
+
+          if resume.first_company_name != nil && resume.first_company_name != "" #[32]
+            @show_resume.push("Work History")
+          else
+            @show_resume.push("")
+          end
+
+          if resume.first_volunteer_organization != nil && resume.first_volunteer_organization != "" #[33]
+            @show_resume.push("Volunteer Work")
+          else
+            @show_resume.push("")
+          end
+
+          if resume.undergrad_uni != nil && resume.undergrad_uni != "" #[34]
+            @show_resume.push("Undergraduate")
+          else
+            @show_resume.push("")
+          end
+
+          if resume.first_certification != nil && resume.first_certification != "" #[35]
+            @show_resume.push("Certifications")
+          else
+            @show_resume.push("")
+          end
+
+          if resume.first_hobby != nil && resume.first_hobby != "" #[36]
+            @show_resume.push("Hobbies")
           else
             @show_resume.push("")
           end
