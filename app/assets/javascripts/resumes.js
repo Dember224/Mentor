@@ -80,5 +80,6 @@ document.addEventListener("turbolinks:load",function() {
     $('#title_hobby').css('display', 'inline')
   });
 
+  
 
 })
