@@ -2,11 +2,16 @@ class MessagesController < ApplicationController
   def new
     @message =  Message.new
     @messages = Message.all
+    @order_messages = Message.order(:created_at)
     @user = User.all
   end
 
   def create
     @message = Message.new(message_params)
+    @message.save
+  end
+
+  def index
   end
 
   def agreed
