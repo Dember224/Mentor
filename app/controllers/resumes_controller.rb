@@ -2,7 +2,14 @@ class ResumesController < ApplicationController
 
   def new
     @resume = Resume.new
+    @all_resumes = Resume.all
+    @all_resumes.each do |resume|
+      if resume.user_id == current_user.id
+        redirect_to '/pairs' and return
+      end
+    end
   end
+
 
   def create
     @resume = Resume.new(resume_params)

@@ -18,18 +18,27 @@
 
 </head>
 <body>
-  <% @messages.each do |messages| %>
-    <% agreed.each do |agree| %>
-      <% if messages.to == current_user.id %>
+  <h2>Message Your Match!</h2>
+  <div class="container">
+  <% @order_messages.each do |messages| %>
+  <div class="row">
+    <% if messages.to == current_user.id %>
+      <div class="recieved">
         <%= messages.message %>
-      <% elsif messages.from == current_user.id %>
+      </div>
+  </div>
+  <div class="row">
+    <% elsif messages.from == current_user.id %>
+      <div class="sent">
         <%= messages.message %>
-      <% end %>
+      </div>
     <% end %>
+  </div>
   <% end %>
 
   <%= form_for(@message) do |message| %>
     <%= message.hidden_field :from, :value => current_user.id %>
+    <div class="row">
     <p> Choose a match to message! </p>
     <% @user.each do |user| %>
       <% agreed.each do |agree| %>
@@ -39,7 +48,9 @@
         <% end %>
       <% end %>
     <% end %>
+    </div>
     <%= message.text_area :message, :cols => "100", :rows => "10" %>
-    <%= message.submit "Message", class: "btn-submit" %>
+    <%= message.submit "Message", class: " btn btn-submit" %>
   <% end %>
+  </div>
 </body>
