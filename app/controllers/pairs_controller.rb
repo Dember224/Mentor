@@ -276,7 +276,7 @@ class PairsController < ApplicationController
 
       end
     end
-    return @match
+    return @match[1..10]
   end
 
   helper_method :options
@@ -304,6 +304,7 @@ class PairsController < ApplicationController
     end
 
     for picked in @choosen
+      @pair = []
       Pair.all.each do |p|
         if p.user_id == picked && p.mentee_id == current_user.id
           @pair.push(p.user_id)
