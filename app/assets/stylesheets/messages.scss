@@ -1,0 +1,23 @@
+// Place all the styles related to the message controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sent {
+  width: 30%;
+  background-color: green;
+  color: white;
+  border: solid;
+  border-radius: 20%;
+  text-align: center;
+  margin: auto;
+}
+
+.recieved {
+  width: 30%;
+  background-color: yellow;
+  color: white;
+  border: solid;
+  border-radius: 20%;
+  text-align: center;
+  margin: auto;
+}
