@@ -19,5 +19,6 @@ document.addEventListener("turbolinks:load",function() {
 
     $('#career').click(function() {
       $('#submit').css("display", "block")
+      $('#submit').scrollTop();
     });
   });

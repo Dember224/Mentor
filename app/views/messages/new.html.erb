@@ -49,8 +49,10 @@
       <% end %>
     <% end %>
     </div>
-    <%= message.text_area :message, :cols => "100", :rows => "10" %>
-    <%= message.submit "Message", class: " btn btn-submit" %>
+    <div class="row text">
+      <%= message.text_area :message, :cols => "100", :rows => "10" %>
+    </div>
+    <%= message.submit "Message", class: "btn btn-success" %>
   <% end %>
   </div>
 </body>
