@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170717052754) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "careers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170717052754) do
   create_table "pairs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "mentee_id"
     t.string "message"
     t.index ["user_id"], name: "index_pairs_on_user_id"
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170717052754) do
   create_table "resumes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "high_school"
     t.integer "hs_class"
     t.string "first_sport"
@@ -101,7 +104,7 @@ ActiveRecord::Schema.define(version: 20170717052754) do
     t.string "name"
     t.string "email"
     t.string "expertise"
-    t.integer "career_id"
+    t.bigint "career_id"
     t.text "description"
     t.string "password_digest"
     t.index ["career_id"], name: "index_users_on_career_id"
