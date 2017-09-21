@@ -2,5 +2,5 @@
 
 # ApplicationController.renderer.defaults.merge!(
 #   https_host: 'example.org',
-#   httpss: false
+#   https: false
 # )
