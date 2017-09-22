@@ -301,7 +301,7 @@ class PairsController < ApplicationController
       if pair.user_id == current_user.id
         @choosen.push(pair.mentee_id)
       end
-    end
+    end+
 
     for picked in @choosen
       @pair = []
