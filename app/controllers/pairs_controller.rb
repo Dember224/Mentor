@@ -266,13 +266,14 @@ class PairsController < ApplicationController
 
 #options method is intended to produce matches in the same profession but with the opposite expertise so experts and beginners are paired.
   def options
+    @user = User.all
     @match = []
     for match in @user do
       if (current_user.career_id == match.career_id) && (current_user.expertise != match.expertise)
         @match.push(match.id)
 
       else
-        puts "Sorry, we don't seem to have what you're looking for right now. Please try back later."
+        @match.push("We're working on finding a match that fits your needs. Please check back later.")
 
       end
     end
