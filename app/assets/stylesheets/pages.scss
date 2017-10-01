@@ -4,6 +4,7 @@
 
 #title{
 	text-align: center;
+	font-family: courier;
 }
 
 .mentee{
@@ -11,5 +12,22 @@
 }
 
 .container {
+	text-align: center;
+}
+
+.discussion{
+	height: 400px;
+}
+
+.signup{
+	position: absolute;
+	margin-top: -250px;
+	font-size: 50px;
+	color: white;
+}
+
+.discussion:hover + .signup{
+	color: #277553;
+	font-size: 75px;
 	text-align: center;
 }
