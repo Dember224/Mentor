@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get '/resume' => 'resumes#new'
   post 'resume' => 'resumes#create'
   resources :resumes
+  get '/contact' => 'contacts#index'
 
 end
