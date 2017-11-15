@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Navbar styling
+.navbar-brand {
+  font: TrajanSansPro;
+}
+
+.navigation {
+  font: TrajanSansPro;
+}
+//Contact info styling
+.contact_title {
+  font: Trajan Sans Pro;
+}
 .info {
-  font-family: courier;
+  font: Gill Sans;
+  margin-left: 5%;
 }

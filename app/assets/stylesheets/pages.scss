@@ -2,9 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+//navbar
+
+.navbar{
+	font-family: TrajanSansPro;
+}
+
 #title{
 	text-align: center;
-	font-family: courier;
+	font-family: TrajanSansPro;
+}
+
+.join_question {
+	font-family: GillSans;
 }
 
 .mentee{
@@ -13,20 +23,24 @@
 
 .container {
 	text-align: center;
+	margin-bottom: 5%;
 }
 
 .discussion{
 	height: 400px;
 }
 
+// signup button
 .signup{
 	position: absolute;
 	margin-top: -45%;
 	margin-left: -10%;
+	font-family: GillSans;
 	font-size: 50px;
 	color: white;
 }
 
+// Pictures to click for signup
 .discussion:hover + .signup{
 	color: #277553;
 	font-size: 75px;
@@ -37,4 +51,14 @@
 	border-color: #277553;
 	border: solid;
 	height:410px;
+}
+
+//Telemachus logo
+
+.logo {
+	height: 150px;
+	width: 300px;
+	display: inline-block;
+	margin-top: -2%;
+	margin-bottom: -3%;
 }
