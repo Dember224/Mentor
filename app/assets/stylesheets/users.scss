@@ -19,13 +19,31 @@
   margin: auto;
 }
 
+//Motto
+
+.motto {
+  font-family: TrajanSansPro;
+}
+
+//divs to display remaining steps
 .number {
-  background-color: #449D44;
+  background-color: #009966;
   margin-top:0px;
   margin-bottom:0px;
   border-radius: 90%;
+  font-family: TrajanSansPro;
 }
 
 .mentor {
-  height: 100px;
+  height: 200px;
+  margin-bottom: -4%;
+}
+
+.btn {
+  background-color: #6699cc;
+}
+
+//form text fields
+.text {
+  font-family: GillSans;
 }

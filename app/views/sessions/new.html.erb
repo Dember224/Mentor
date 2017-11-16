@@ -20,12 +20,13 @@
 </head>
 <body>
   <div class="container">
-    <h1>Pay It Forward</h1>
+    <%= image_tag 'logo.png', :class => 'logo' %>
+    <h1 class="motto">Pay It Forward</h1>
     <%= form_for(:session, url: login_path) do |user| %>
-      <%= user.email_field :email, :placeholder => 'Email' %>
-      <%= user.password_field :password, :placeholder => 'Password' %>
+      <%= user.email_field :email, :placeholder => 'Email', :class => 'text' %>
+      <%= user.password_field :password, :placeholder => 'Password', :class => 'text' %>
 
-      <%= user.submit "Login", :class => "btn btn-success" %>
+      <%= user.submit "Login", :class => "btn" %>
       <% end %>
 
       <%= image_tag "help.jpg", :class => "mentee" %>
