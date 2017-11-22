@@ -4,111 +4,155 @@
 
 //general stuff
 .level {
-  background-color: #449D44;
+  background-color: #336699;
+  font-family: TrajanSansPro;
   margin-top:0px;
   margin-bottom:0px;
   border-radius: 90%;
 }
 
+h1{
+  font-family: TrajanSansPro;
+}
+
+p{
+  font-family: GillSans;
+}
+
+//instructions
+.instructions{
+  font-family: GillSans;
+  font-size: 15px;
+}
+
 //high school stuff
 #high_school {
   margin-bottom: 2%;
+  font-family: GillSans;
   display: none;
 }
 
 #title_high_school {
   display: none;
+  font-family: GillSans;
 }
 
 //undergrad stuff
 #undergrad {
   display: none;
+  font-family: GillSans;
 }
 
 #title_undergrad {
   display: none;
   margin-top: 5%;
+  font-family: GillSans;
 }
 
 #resume_second_undergrad_major {
   display: none;
+  font-family: GillSans;
 }
 
 #resume_first_undergrad_minor {
   display: none;
+  font-family: GillSans;
 }
 
 #resume_second_undergrad_minor {
   display: none;
+  font-family: GillSans;
 }
 
 #resume_third_undergrad_minor {
   display: none;
+  font-family: GillSans;
 }
 
 #first_minor {
+  font-family: GillSans;
 
 }
 
 #second_minor {
   display: none;
+  font-family: GillSans;
 }
 
 #third_minor {
   display: none;
+  font-family: GillSans;
 }
 
 #second_university {
   display: none;
+  font-family: GillSans;
 }
 
 //advanced degree stuff
 #advanced_degree {
   display: none;
+  font-family: GillSans;
 }
 
 #title_advanced_degree {
   display: none;
   margin-top: 5%;
+  font-family: GillSans;
 }
 
 #graduate_studies {
   display: none;
+  font-family: GillSans;
 }
 
 //job and career stuff
 #jobs {
   display: none;
+  font-family: GillSans;
 }
 
 #title_jobs {
   display: none;
   margin-top: 5%;
+  font-family: GillSans;
 }
 
 #volunteer {
   display: none;
+  font-family: GillSans;
 }
 
 #title_volunteer {
   display: none;
   margin-top: 5%;
+  font-family: GillSans;
 }
 
 #certs {
   display: none;
+  font-family: GillSans;
 }
 
 #title_cert {
   display: none;
+  font-family: GillSans;
 }
 
 //hobies
 #hobby {
   display: none;
+  font-family: GillSans;
 }
 
 #title_hobby {
   display: none;
   margin-top: 5%;
+  font-family: GillSans;
+}
+
+//submit
+
+.submit{
+  font-family: GillSans;
 }

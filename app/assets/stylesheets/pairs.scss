@@ -16,9 +16,22 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+  font-family: GillSans;
 }
 
 .hello {
   display: block;
   text-align: center;
+}
+
+.no_match{
+  font-family: TrajanSansPro;
+}
+
+p {
+  font-family: GillSans;
+}
+
+#pairs_logo {
+  margin-bottom: 1%;
 }

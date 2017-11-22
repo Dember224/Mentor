@@ -20,7 +20,7 @@
 </head>
 <body>
   <div class="container">
-    <%= image_tag 'logo.png', :class => 'logo' %>
+    <%= image_tag 'logo.png', :class => 'logo', :id => 'login_logo' %>
     <h1 class="motto">Pay It Forward</h1>
     <%= form_for(:session, url: login_path) do |user| %>
       <%= user.email_field :email, :placeholder => 'Email', :class => 'text' %>
