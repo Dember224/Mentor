@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Telemachus</title>
+
+	<!-- The bootstrap gem isn't working for some reason. Need to look into that. For now I'll use the links -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/"> Telemachus</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="/contact">Contact us</a></li>
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+
+  <div class="container">
+    <p>Welcome back <%= current_user.name %>!</p>
+    <div class="options">
+      <% if mentor? %>
+        <button class="btn"><a href="/messages">Message your mentees</a></button>
+      <% else %>
+        <button class="btn"><a href="/messages">Message your mentors</a></button>
+      <% end %>
+      <% if @my_resume == nil %>
+        <button class="btn"><a href="/resume">Complete a resume</a></button>
+      <% end %>
+      <% if mentor? %>
+        <button class="btn"><a href="pairs">Find another mentee</a></button>
+      <% else %>
+        <button class="btn"><a href="pairs">Find another mentor</a></button>
+      <% end %>
+    </div>
+    <div class="matches">
+      <% if mentor? %>
+        <p>Here are your current mentees:</p>
+				<% [@resume].each do |resume| %>
+          <% [@match_user].each do |user| %> <!--I need to edit this to display several matches properly -->
+						<% if user.id == resume.user_id %>
+							<%= user.name %>
+						<% end %>
+					<% end %>
+					<button class="btn">Resume</button>
+          <div class="resume">
+            <p><% @resume_items.each do |item| %>
+              <% if resume[item] != "" && resume[item] != nil %>
+							<% case item %>
+							<% when "high_school" %>
+								<h3>High School</h3>
+							<% when "undergrad_uni" %>
+								<h3>Undergraduate</h3>
+								<br>
+							<% when "second_undergrad_uni" %>
+								<br>
+							<% when "advanced_degree_type" %>
+								<br>
+							<% when "second_advanced_degree_type" %>
+								<br>
+							<% when "first_company_name" %>
+								<h3>Job History</h3>
+								<br>
+							<% when "second_company_name" %>
+								<br>
+							<% when "third_company_name" %>
+								<br>
+							<% when "fourth_company_name" %>
+								<br>
+							<% when "first_volunteer_organization" %>
+								<h3>Volunteerism</h3>
+								<br>
+							<% when "first_hobby" %>
+								<h3>Hobbies</h3>
+								<br>
+							<% end %>
+
+
+                <b><%= "#{item}".capitalize.gsub(/_/, " ") %>:</b>
+                <%= resume[item] %>
+              <% end %>
+            <% end %>
+						<% end %>
+            </p>
+          </div>
+
+          <% else %>
+          <p>Here are your current mentors:</p>
+					<% [@resume].each do |resume| %>
+					<% [@match_user].each do |user| %> <!--I need to edit this to display several matches properly -->
+						<% if user.id == resume.user_id %>
+							<%= user.name %>
+						<% end %>
+					<% end %>
+					<button class="btn">Resume</button>
+          <div class="resume">
+            <p><% @resume_items.each do |item| %>
+              <% if resume[item] != "" && resume[item] != nil %>
+								<% case item %>
+								<% when "high_school" %>
+									<h3>High School</h3>
+								<% when "undergrad_uni" %>
+									<h3>Undergraduate</h3>
+									<br>
+								<% when "second_undergrad_uni" %>
+								 	<br>
+								<% when "advanced_degree_type" %>
+									<br>
+								<% when "second_advanced_degree_type" %>
+									<br>
+								<% when "first_company_name" %>
+									<h3>Job History</h3>
+									<br>
+								<% when "second_company_name" %>
+									<br>
+								<% when "third_company_name" %>
+									<br>
+								<% when "fourth_company_name" %>
+									<br>
+								<% when "first_volunteer_organization" %>
+									<h3>Volunteerism</h3>
+									<br>
+								<% when "first_hobby" %>
+									<h3>Hobbies</h3>
+									<br>
+								<% end %>
+                <b><%= "#{item}".capitalize.gsub(/_/, " ") %>:</b>
+                  <%= resume[item] %>
+              <% end %>
+            <% end %>
+					<% end %>
+      <% end %>
+    </div>
+  </div>
+	<div class ="update_resume">
+		<button class="btn"><a href= "/resume/:id">Update My Resume<a/></button>
+	</div>
+</body>
+</html>

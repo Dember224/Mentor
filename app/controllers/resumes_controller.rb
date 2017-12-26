@@ -2,11 +2,9 @@ class ResumesController < ApplicationController
 
   def new
     @resume = Resume.new
-    @all_resumes = Resume.all
-    @all_resumes.each do |resume|
-      if resume.user_id == current_user.id
-        redirect_to '/pairs' and return
-      end
+    @my_resume = Resume.find_by_user_id(current_user.id)
+    if @my_resume != nil
+      redirect_to '/pairs' and return
     end
   end
 
@@ -14,6 +12,9 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.new(resume_params)
     @resume.save
+  end
+
+  def update
   end
 
   private

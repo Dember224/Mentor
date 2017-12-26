@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   resources :messages
   get '/resume' => 'resumes#new'
   post 'resume' => 'resumes#create'
+  patch 'resume/:id' => 'resumes#update'
   resources :resumes
   get '/contact' => 'contacts#index'
+  get '/hub/:id' => 'hubs#show'
 
 end
