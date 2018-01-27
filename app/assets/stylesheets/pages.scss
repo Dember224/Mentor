@@ -2,19 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
 //navbar
 
 .navbar{
-	font-family: TrajanSansPro;
+	font-family: "Trajan Sans Pro", "Roboto", sans-serif;
+}
+
+.navigation{
+	font-size: 30px;
+}
+
+.navbar-brand{
+	font-size: 24px;
+}
+#brand{
+	font-size: 50px;
+	font-family: sans-serif;
 }
 
 #title{
 	text-align: center;
-	font-family: TrajanSansPro;
+	font-family: "Trajan Sans Pro", "Roboto", sans-serif;
+	margin-top: 1%;
 }
 
 .join_question {
-	font-family: GillSans;
+	font-family: "Gill Sans", sans-serif;
+	font-size: 18px;
 }
 
 .mentee{
@@ -32,33 +47,31 @@
 
 // signup button
 .signup{
-	position: absolute;
-	margin-top: -45%;
-	margin-left: -10%;
-	font-family: GillSans;
-	font-size: 50px;
-	color: white;
+	font-family: "Trajan Sans Pro", "Roboto", sans-serif;
+	font-size: 24px;
+	color: #cc9966;
+	border-radius: 15px;
+	border-width:thin;
+	border-color: #cc9966;
+	padding: 5px 20px;
+	background-color:white;
 }
 
-// Pictures to click for signup
-.discussion:hover + .signup{
-	color: #277553;
-	font-size: 75px;
-	text-align: center;
+button a{
+	text-decoration: none;
+	color: #cc9966;
 }
 
-.discussion:hover {
-	border-color: #277553;
-	border: solid;
-	height:410px;
+button a:hover{
+	color: #cc9966;
 }
+
 
 //Telemachus logo
 
 .logo {
-	height: 150px;
-	width: 300px;
+	height: 30%x;
+	width: 30%;
 	display: inline-block;
 	margin-top: -2%;
-	margin-bottom: -3%;
 }
