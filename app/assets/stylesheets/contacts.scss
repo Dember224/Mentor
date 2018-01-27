@@ -2,19 +2,73 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Navbar styling
-.navbar-brand {
-  font: TrajanSansPro;
+
+//General styling
+h2{
+  font-family: 'Gill Sans', 'sans-serif';
+  padding-bottom: -8%;
 }
 
+h3{
+  font-family: 'Gill Sans', 'sans-serif';
+  padding-top: -8%;
+}
+// Navbar styling
+
+$colPrimary2  : #333333;
+
+.container-fluid{
+  background-color: $colPrimary2;
+  border-color: $colPrimary2;
+  .navbar-brand {
+    color: $colPrimary2;
+  }
+}
+
+  .navbar-inverse{
+    background-color: $colPrimary2;
+    border-color: $colPrimary2;
+  }
+ .navbar-brand {
+  font-family: 'TrajanSansPro', 'sans-serif';
+}
+
+#brand {
+  font-size: 50px
+}
 .navigation {
   font: TrajanSansPro;
+  font-size: 30px;
+}
+
+nav {
+  height: 70px;
 }
 //Contact info styling
 .contact_title {
-  font: Trajan Sans Pro;
+  font-family: 'Gill Sans', 'sans-serif';
+  margin:auto;
 }
 .info {
   font: Gill Sans;
   margin-left: 5%;
+}
+
+#contact_logo{
+  margin: 0px auto;
+  width: 30%;
+}
+
+#founder_a{
+  display: inline;
+  float: left;
+  margin-right: -50%;
+  margin-top: 10%;
+}
+
+#founder_k{
+  display: inline;
+  float: right;
+  margin-left: -50%;
+  margin-top: 10%;
 }

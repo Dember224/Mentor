@@ -23,7 +23,7 @@
   <nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/"> Telemachus</a>
+				<a class="navbar-brand" href="/" id="brand"> Telemachus</a>
 			</div>
 			<ul class="nav navbar-nav navigation">
 				<li><a href="/contact">Contact us</a></li>
@@ -32,11 +32,18 @@
 		</div>
 	</nav>
 
-	<h1 class= "contact_title">Co-founders:</h1>
-	<h2 class= "info">Antoine Washington</h2>
-  <h3 class= "info">Email: Dember224@gmail.com</h3>
-	<h2 class= "info">Kory Roberson</h2>
-	<h3 class= "info">Email: Krober18@gmail.com</h3>
+	<div class="container">
+		<h1 class= "contact_title">Co-founders</h1>
+		<%= image_tag "logo.svg", :id => "contact_logo" %>
+		<div id="founder_a">
+			<h2 class= "info">Antoine Washington</h2>
+  		<h3 class= "info">Email: Dember224@gmail.com</h3>
+		</div>
+		<div id="founder_k">
+			<h2 class= "info">Kory Roberson</h2>
+			<h3 class= "info">Email: Krober18@gmail.com</h3>
+		</div>
+</div>
 
 </body>
 </html>
