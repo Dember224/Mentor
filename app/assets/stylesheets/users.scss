@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#expertise {
+
+.instructions {
+  font-family: "TrajanSansPro", "GillSans", sans-serif;
+  font-size: 25px;
+}
+
+#user_info {
   display: none;
 }
 
@@ -22,28 +28,97 @@
 //Motto
 
 .motto {
-  font-family: TrajanSansPro;
+  font-family: "TrajanSansPro", "Roboto", sans-serif;
 }
 
 //divs to display remaining steps
+
+.decoration{
+  color: #6699cc;
+
+}
+
 .number {
-  background-color: #009966;
   margin-top:0px;
   margin-bottom:0px;
-  border-radius: 90%;
-  font-family: TrajanSansPro;
+  font-family: "TrajanSansPro", "Roboto", sans-serif;
 }
 
 .mentor {
   height: 200px;
-  margin-bottom: -4%;
+  margin: auto;
 }
 
-.btn {
-  background-color: #6699cc;
+.experience_button {
+  border-color: #cc9966;
+  background-color: white;
+  color: black;
+  border: 1px solid #cc9966;
+  font-family: "Roboto", "Gill Sans", sans-serif;
+  text-align: center;
+  margin:auto;
+  width: 200px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.expertise_radio{
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+}
+
+.first_radio_button {display: none}
+#user_expertise_beginner{display: none}
+
+.selected {
+  background-color: #cc9966;
+  color: white;
 }
 
 //form text fields
 .text {
   font-family: GillSans;
+}
+
+#description_text_box {
+  border-color: #cc9966
+}
+
+#user_career_id {
+  font-family: "Roboto", "Gill Sans", sans-serif;
+  background-color: #D3D3D3;
+  border-radius: 10%;
+  height: 40px;
+  width: 275px;
+  text-align: center;
+  margin: auto;
+}
+
+
+select{
+  text-align: center;
+  margin: auto;
+}
+
+.user_info {
+  font-family: "Roboto", "Gill Sans", sans-serif;
+  margin-top: 1.5%;
+  border-color: #cc9966;
+  text-align: center;
+  height: 40px;
+  width: 200px;
+  font-size: 20px;
+}
+
+#submit {
+  margin-top: 1.5%;
+  font-family: "Roboto", "Gill Sans", sans-serif;
+  height: 80px;
+  width: 400px;
+  font-size: 40px;
+  background-color: white;
+  color: #cc9966;
+  border-color: #cc9966;
+  border-radius: 10%;
 }

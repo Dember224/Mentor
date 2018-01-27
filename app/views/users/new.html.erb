@@ -21,53 +21,61 @@
 
 <body>
   <div class="container">
-    <%= image_tag "logo.png", :class => "mentor" %>
+    <%= image_tag "logo.svg", :class => "mentor" %>
     <h1 class="motto">Pay It Forward</h1>
     <div id="one">
-      <h2 class="motto">Step 1</h2>
+      <h2 class="motto"><span class="decoration">&#x2015;</span> Step 1 <span class="decoration">&#x2015;</span></h2>
     </div>
     <%= form_for(@user) do |user| %>
-      <div class="row text">
-        <%= user.text_field :name, :placeholder => 'Your username' %>
+
+    <div class="row text" id="expertise">
+      <div class="btn-group" data-toggle="radio">
+      <h1 class="instructions">Are you looking to be a mentor, or to find one?</h1>
+      <div class="col-xs-6 col-md-6">
+        <%= user.radio_button(:expertise, 'Expert', :id => "user[expertise]", :class => "first_radio_button") %>
+        <div class="experience_button" id="expert">
+          <label for="user[expertise]" class = "btn" ><span class="expertise_radio">I'm Experienced</span></label>
+        </div>
       </div>
-      <div class="row text">
-        <%= user.email_field :email, :placeholder => 'Email' %>
+      <div class="col-xs-6 col-md-6">
+        <%= user.radio_button(:expertise, 'Beginner') %>
+        <div class="experience_button" id="beginner">
+          <label for="user_expertise_beginner" class ="btn" ><span class="expertise_radio">I'm a Beginner</span></label>
+        </div>
       </div>
-      <div class="row text">
-        <%= user.password_field :password, :placeholder => 'Password', :id => "identity" %>
       </div>
+    </div>
 
       <div id="two" class="number">
-        <h2>2</h2>
+        <h2><span class="decoration">&#x2015;</span>Step 2<span class="decoration">&#x2015;</span></h2>
       </div>
-      <div class="row text" id="expertise">
-        <div class="btn-group" data-toggle="radio">
-        <h1>Are you looking to be a mentor, or to find one?</h1>
-        <div class="col-xs-6 col-md-6">
-          <%= user.radio_button(:expertise, 'Expert', :id => "user[expertise]") %>
-          <label for="user[expertise]" class = "btn" >I'm Experienced</label>
-        </div>
-        <div class="col-xs-6 col-md-6">
-          <%= user.radio_button(:expertise, 'Beginner') %>
-          <label for="user_expertise_beginner" class ="btn" >I'm a Beginner</label>
-        </div>
-        </div>
+      <div class="row text" id="description">
+        <h1 class="instructions">Tell us a little about yourself; where you are in life;<br> and what you're looking for in a mentor/mentee.</h1>
+        <%= user.text_area :description, :cols => "100", :rows => "10", :id =>"description_text_box" %>
       </div>
 
       <div id="three" class="number">
-        <h2>3</h2>
+        <h2><span class="decoration">&#x2015;</span>Step 3<span class="decoration">&#x2015;</span></h2>
       </div>
-      <div class="row text" id="description">
-        <h1>Tell us a little about where you are in life and what you're looking for in a mentor/mentee.</h1>
-        <%= user.text_area :description, :cols => "100", :rows => "10" %>
+      <div class="row text" id="career">
+        <h1 class="instructions">In which field are you a professional, or aspiring beginner?</h1>
+        <%= user.collection_select(:career_id, Career.all, :id, :job, {class: "career_select"}) %>
       </div>
 
       <div id="four" class="number">
-        <h2>4</h2>
+        <h2><span class="decoration">&#x2015;</span>Step 4<span class="decoration">&#x2015;</span></h2>
       </div>
-      <div class="row text" id="career">
-        <h1>In which field are you a professional, or aspiring beginner?</h1>
-        <%= user.collection_select(:career_id, Career.all, :id, :job) %>
+
+      <div class="row text" id="user_info">
+        <div class="row text">
+          <%= user.text_field :name, :placeholder => 'Your username', :class => 'user_info' %>
+        </div>
+        <div class="row text">
+          <%= user.email_field :email, :placeholder => 'Email', :class => 'user_info' %>
+        </div>
+        <div class="row text">
+          <%= user.password_field :password, :placeholder => 'Password', :id => "identity", :class => 'user_info' %>
+        </div>
       </div>
 
       <%= user.submit "Submit", class: "btn text", :id => "submit" %>
