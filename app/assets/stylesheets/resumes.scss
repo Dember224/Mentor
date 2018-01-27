@@ -4,155 +4,181 @@
 
 //general stuff
 .level {
-  background-color: #336699;
-  font-family: TrajanSansPro;
+  font-family: "Trajan Sans Pro", sans-serif;
   margin-top:0px;
   margin-bottom:0px;
-  border-radius: 90%;
+
 }
 
-h1{
-  font-family: TrajanSansPro;
+h1 {
+  font-family: "Trajan Sans Pro", "Gill Sans", sans-serif;
 }
 
-p{
-  font-family: GillSans;
+.input_box{
+  border-color: #cc9966;
+  borer: solid;
+  height: 30px;
+  width: 150px;
+  font-family: "Gill Sans", sans-serif;
+  text-align: center;
 }
+
+.row {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: block;
+}
+
+.btn {
+  background-color: #cc9966;
+}
+
 
 //instructions
-.instructions{
-  font-family: GillSans;
-  font-size: 15px;
+.instructions p{
+  font-family: "Gill Sans", "Roboto", sans-serif;
+  font-size: 25px;
 }
 
 //high school stuff
 #high_school {
-  margin-bottom: 2%;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
   display: none;
 }
 
 #title_high_school {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
+  margin-bottom: 2%;
 }
 
 //undergrad stuff
 #undergrad {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #title_undergrad {
   display: none;
   margin-top: 5%;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
+}
+
+#undergrad_class {
+  width: 100px
 }
 
 #resume_second_undergrad_major {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #resume_first_undergrad_minor {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #resume_second_undergrad_minor {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #resume_third_undergrad_minor {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #first_minor {
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 
 }
 
 #second_minor {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #third_minor {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #second_university {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 //advanced degree stuff
 #advanced_degree {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #title_advanced_degree {
   display: none;
   margin-top: 5%;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #graduate_studies {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 //job and career stuff
 #jobs {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #title_jobs {
   display: none;
   margin-top: 5%;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #volunteer {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #title_volunteer {
   display: none;
   margin-top: 5%;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #certs {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #title_cert {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 //hobies
 #hobby {
   display: none;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 #title_hobby {
   display: none;
   margin-top: 5%;
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
 }
 
 //submit
 
 .submit{
-  font-family: GillSans;
+  font-family: "Gill Sans", sans-serif;
+  height: 75px;
+  width: 30%;
+  color: white;
+  background-color: #cc9966;
+  font-size: 50px;
+  border-radius: 10%;
+  text-align: center;
 }

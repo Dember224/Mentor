@@ -5,7 +5,7 @@
 
 document.addEventListener("turbolinks:load",function() {
   $('#more_majors').click(function() {
-    $('#resume_second_undergrad_major').css("display", "block")
+    $('#resume_second_undergrad_major').css("display", "inline")
     $('#more_majors').css("display","inline")
   });
 
@@ -38,7 +38,7 @@ document.addEventListener("turbolinks:load",function() {
   });
 
   $('#hs').click(function(){
-    $('#high_school').css('display', 'inline')
+    $('#high_school').css('display', 'block')
     $('#title_high_school').css('display', 'inline')
     $('#hs').css('display', 'none')
 
@@ -80,6 +80,6 @@ document.addEventListener("turbolinks:load",function() {
     $('#title_hobby').css('display', 'inline')
   });
 
-  
+
 
 })
