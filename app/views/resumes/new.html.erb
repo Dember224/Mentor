@@ -71,21 +71,21 @@
       <p>
         <%= resume.number_field :undergrad_class, max: 2017, min: 1917, placeholder: "Class", :id => "undergrad_class" %>
         <%= resume.text_field :first_undergrad_major, :cols => "10", :rows => "1", placeholder: "Major" %>
-        <button class="btn" id="more_majors" onclick= "return false;">Have more majors?</button>
+        <button class="btn more" id="more_majors" onclick= "return false;">Have more majors?</button>
         <%= resume.text_field :second_undergrad_major, :cols => "10", :rows => "1", placeholder: "Second Major" %>
       </p>
 
       <div class="row">
-        <button class="btn" id="first_minor" onclick="return false;">Have minors?</button>
+        <button class="btn more" id="first_minor" onclick="return false;">Have minors?</button>
       <%= resume.text_field :first_undergrad_minor, :cols => "10", :rows => "1", placeholder: "Minor" %>
-      <button class="btn" id="second_minor" onclick="return false;">Another minor?</button>
+      <button class="btn more" id="second_minor" onclick="return false;">Another minor?</button>
       <%= resume.text_field :second_undergrad_minor, :cols => "10", :rows => "1", placeholder: "Second Minor" %>
-      <button class="btn" id="third_minor" onclick="return false;">Another minor?</button>
+      <button class="btn more" id="third_minor" onclick="return false;">Another minor?</button>
       <%= resume.text_field :third_undergrad_minor, :cols => "10", :rows => "1", placeholder: "Third Minor" %>
       </div>
     </div>
     <div class="row">
-      <button class="btn" id="new_uni" onclick="return false;">Went back to undergrad?</button>
+      <button class="btn more" id="new_uni" onclick="return false;">Went back to undergrad?</button>
     </div>
       <div class ="row" id="second_university">
       <%= resume.text_field :second_undergrad_uni, :cols => "10", :rows => "1", placeholder: "University" %>
@@ -140,7 +140,7 @@
     <%= resume.number_field :advanced_degree_class, max: 2017, min: 1917, placeholder: "Class", :id => "undergrad_class" %>
 
     <div class="row">
-      <button class="btn" id="second_graduate" onclick="return false;">Another advanced degree?</button>
+      <button class="btn more" id="second_graduate" onclick="return false;">Another advanced degree?</button>
     </div>
     <div id="graduate_studies">
     <p>Degree Type</p>

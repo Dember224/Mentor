@@ -3,7 +3,9 @@ class ResumesController < ApplicationController
   def new
     @resume = Resume.new
     @my_resume = Resume.find_by_user_id(current_user.id)
-    
+    if @my_resume != nil
+      redirect_to '/hub/:id' and return
+    end
   end
 
 
