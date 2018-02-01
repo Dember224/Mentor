@@ -18,6 +18,7 @@
 
 </head>
 <body>
+  <button class="btn more"><a href="/hub/:id">My Hub</a></button>
   <h2>Message Your Match!</h2>
   <div class="container">
   <% @order_messages.each do |messages| %>
@@ -52,7 +53,7 @@
     <div class="row text">
       <%= message.text_area :message, :cols => "100", :rows => "10" %>
     </div>
-    <%= message.submit "Message", class: "btn btn-success" %>
+    <%= message.submit "Message", class: "btn more" %>
   <% end %>
   </div>
 </body>
