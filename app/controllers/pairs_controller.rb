@@ -83,20 +83,31 @@ class PairsController < ApplicationController
 #This method finds users who have agreed upon a mentor mentee relationship
   def agreed
     @choosen = []
-    for pair in Pair.all
-      if pair.user_id == current_user.id
-        @choosen.push(pair.mentee_id)
+    @my_mentees = Pair.find_by_user_id(current_user.id).mentee_id
+    if @my_mentees.is_a?(Integer)
+      if Pair.find_by_user_id(@my_mentees) != nil
+        @my_mentees_choice = Pair.find_by_user_id(@my_mentees).mentee_id
+        if @my_mentees_choice == current_user.id
+          @choosen.push(@my_mentees)
+        end
       end
-    end+
-
-    for picked in @choosen
-      @pair = []
-      Pair.all.each do |p|
-        if p.user_id == picked && p.mentee_id == current_user.id
-          @pair.push(p.user_id)
+    else
+      @my_mentees.each do |mentee|
+        @mentees_matches = Pair.find_by_user_id(mentee).mentee_id
+        if @mentees_matches.is_a?(Integer)
+          if @mentees_matches == current_user.id
+            @choosen.push(@mentees_matches)
+          end
+        elsif @mentees_matches != nil
+        @mentees_matches.each do |me|
+          if me == current_user.id
+            @choosen.push(me)
+          end
+        end
         end
       end
     end
+    return @choosen.last
   end
 
 helper_method :agreed

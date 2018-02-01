@@ -18,18 +18,12 @@
 
 </head>
 <body>
-  <% if agreed.length > 0 %>
+  <% if agreed != nil %>
     <h1>Congratulations you've matched!</h>
-    <% agreed.each do |match| %>
-      <% User.all.each do |user| %>
-        <%if match == user.id %>
-          <a href="/message">Chat with your match</a>
-          <%= user.name %>
-        <% end %>
-      <% end %>
-    <% end %>
+      <button class="btn more"><a href="/message">Chat with your match</a></button>
+    <%= User.find_by_id(agreed).name %>
   <% else %>
-    <p> Sorry, it seems like you don't have any matches yet.</p> <a href="/pairs">Request more mentors?</a>
+    <p> Sorry, it seems like you don't have any matches yet.</p><button class="btn more"> <a href="/pairs">Request more mentors?</a></button>
   <% end %>
 </body>
 </html>
