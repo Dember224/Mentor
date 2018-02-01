@@ -35,20 +35,21 @@
     <p>Welcome back <%= current_user.name %>!</p>
     <div class="options">
       <% if mentor? %>
-        <button class="btn"><a href="/messages">Message your mentees</a></button>
+        <button class="btn more"><a href="/messages">Message your mentees</a></button>
       <% else %>
-        <button class="btn"><a href="/messages">Message your mentors</a></button>
+        <button class="btn more"><a href="/messages">Message your mentors</a></button>
       <% end %>
       <% if @my_resume == nil %>
-        <button class="btn"><a href="/resume">Complete a resume</a></button>
+        <button class="btn more"><a href="/resume">Complete a resume</a></button>
       <% end %>
       <% if mentor? %>
-        <button class="btn"><a href="pairs">Find another mentee</a></button>
+        <button class="btn more"><a href="pairs">Find another mentee</a></button>
       <% else %>
-        <button class="btn"><a href="pairs">Find another mentor</a></button>
+        <button class="btn more"><a href="pairs">Find another mentor</a></button>
       <% end %>
     </div>
     <div class="matches">
+			<% if @my_pair != nil %>
       <% if mentor? %>
         <p>Here are your current mentees:</p>
 				<% [@resume].each do |resume| %>
@@ -57,7 +58,7 @@
 							<%= user.name %>
 						<% end %>
 					<% end %>
-					<button class="btn">Resume</button>
+					<button class="btn more">Resume</button>
           <div class="resume">
             <p><% @resume_items.each do |item| %>
               <% if resume[item] != "" && resume[item] != nil %>
@@ -145,10 +146,11 @@
             <% end %>
 					<% end %>
       <% end %>
+			<% end %>
     </div>
   </div>
-	<div class ="update_resume">
-		<button class="btn"><a href= "/resume/:id">Update My Resume<a/></button>
+	<div class ="update_resume container">
+		<button class="btn more"><a href= "/resume/:id">Update My Resume<a/></button>
 	</div>
 </body>
 </html>
