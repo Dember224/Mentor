@@ -12,6 +12,7 @@ class ResumesController < ApplicationController
   def create
     @resume = Resume.new(resume_params)
     @resume.save
+    redirect_to '/pairs' and return
   end
 
   def update
