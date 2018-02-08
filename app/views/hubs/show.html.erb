@@ -35,9 +35,9 @@
     <p>Welcome back <%= current_user.name %>!</p>
     <div class="options">
       <% if mentor? %>
-        <button class="btn more"><a href="/messages">Message your mentees</a></button>
+        <button class="btn more"><a href="/message">Message your mentees</a></button>
       <% else %>
-        <button class="btn more"><a href="/messages">Message your mentors</a></button>
+        <button class="btn more"><a href="/message">Message your mentors</a></button>
       <% end %>
       <% if @my_resume == nil %>
         <button class="btn more"><a href="/resume">Complete a resume</a></button>
