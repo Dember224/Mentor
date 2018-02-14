@@ -9,12 +9,21 @@
 	font-family: "Trajan Sans Pro", "Roboto", sans-serif;
 }
 
+.page_lead{
+	background-color: white;
+	border-bottom: solid #cc9966;
+	height: 90%;
+}
+
 .navigation{
 	font-size: 30px;
 }
 
 .navbar-brand{
 	font-size: 24px;
+	margin-top: -5%;
+
+
 }
 #brand{
 	font-size: 50px;
@@ -26,6 +35,12 @@
 	font-family: "Trajan Sans Pro", "Roboto", sans-serif;
 	margin-top: 1%;
 }
+
+.nav_logo {
+	height: 40px;
+	background-color: white;
+}
+//body
 
 .join_question {
 	font-family: "Gill Sans", sans-serif;

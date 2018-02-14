@@ -19,9 +19,20 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-light" stye="background-color: teal;">
+		<div class="container-fluid page_lead">
+			<div class="navbar-header" stye="background-color: teal;">
+				<a class="navbar-brand" id="brand" href="/"><%= image_tag "Logomark.svg", :class => "nav_logo" %></a>
+			</div>
+			<ul class="nav navbar-nav navigation">
+				<li><a href="/contact">Contact us</a></li>
+				<li><a href="/logout">Logout</a></li>
+			</ul>
+      <a href="/hub/:id"><%= image_tag "Logotype.svg", :class => "Logo_type_hub"%></a>
+		</div>
+	</nav>
 
   <div class="container">
-    <%= image_tag "logo.svg", :class => "mentor" %>
     <div class="row instructions">
       <h1> Resume</h1>
       <p>Click the title to of each resume item you'd like to submit.</p>
