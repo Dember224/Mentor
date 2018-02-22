@@ -35,10 +35,8 @@
   <div class="container">
     <div class="row instructions">
       <h1> Resume</h1>
-      <p>Click the title to of each resume item you'd like to submit.</p>
-      <p>Potential matches will get a better idea of your compatibility.</p>
-      <p>If a title doesn't apply to you just don't click/leave it empty.</p>
-      <p>When you're finished press submit at the bottom of your screen.</p>
+      <p>Tell potential matches about your career.</p>
+      <p>Click all that apply.</p>
     </div>
     <%= form_for(@resume) do |resume| %>
     <div class="level" id="hs">
@@ -48,6 +46,7 @@
 
       <%= resume.hidden_field :user_id, :value => current_user.id %>
       <div class="row" id="high_school">
+        <div class="collapse_hs" id="high_school_collapse">X</div>
       <div class="col-xs-4 col-md-4">
         <p><%= resume.text_area :high_school, placeholder: "High School Name", :cols => '20', :rows => '1', :class => 'input_box' %></p>
         <p><%= resume.number_field :hs_class, max: 2017, min: 1917, :cols => '20', :rows => '1', placeholder: "Class of", :class => 'input_box' %></p>
@@ -69,6 +68,7 @@
     </div>
     <h1 id='title_undergrad'><span class="decoration">&#x2015;</span>Undergraduate<span class="decoration">&#x2015;</span></h1>
     <div class="row" id="undergrad">
+      <div class="collapse_hs" id="undergrad_collapse">X</div>
       <div class="row">
       <%= resume.text_area :undergrad_uni, :cols => "10", :rows => "1", placeholder: "University" %>
       <div class="btn-group" data-toggle="radio">
@@ -120,6 +120,7 @@
     </div>
     <h1 id="title_advanced_degree"><span class="decoration">&#x2015;</span>Advanced Degree<span class="decoration">&#x2015;</span></h1>
     <div class="row" id="advanced_degree">
+      <div class="collapse_hs" id="advanced_degree_collapse">X</div>
       <p>Degree Type</p>
       <div class="row">
       <%= resume.radio_button(:advanced_degree_type, 'M.D.') %>
@@ -190,6 +191,7 @@
     </div>
     <h1 id="title_jobs"><span class="decoration">&#x2015;</span>Work History<span class="decoration">&#x2015;</span></h1>
     <div class="row" id="jobs">
+      <div class="collapse_hs" id="collapse_work">X</div>
       <div class="row" id="first_job">
         <%= resume.text_field :first_company_name, :cols => '10', :rows => '1', placeholder: "Company Name" %>
         <%= resume.text_field :first_job_title, :cols => '10', :rows => '1', placeholder: "Job Title" %>
@@ -222,23 +224,26 @@
         end date:
         <%= resume.date_field :fourth_job_end_date %>
       </div>
+    </div>
 
       <div class="level" id="voluntary">
         <h2><span class="decoration">&#x2015;</span>Volunteer Work<span class="decoration">&#x2015;</span></h2>
       </div>
       <h1 id="title_volunteer"><span class="decoration">&#x2015;</span>Volunteer Work<span class="decoration">&#x2015;</span></h1>
       <div class="row" id="volunteer">
+        <div class="collapse_hs" id="collapse_voluntary">X</div>
         <%= resume.text_field :first_volunteer_organization, :cols => '10', :rows => '1', placeholder: "Organization"  %>
         <%= resume.text_field :second_volunteer_organization, :cols => '10', :rows => '1', placeholder: "Organization" %>
         <%= resume.text_field :third_volunteer_organization, :cols => '10', :rows => '1', placeholder: "Organization" %>
       </div>
-    </div>
+
 
     <div class="level" id="certified">
       <h2><span class="decoration">&#x2015;</span>Certifications<span class="decoration">&#x2015;</span></h2>
     </div>
     <h1 id="title_cert"><span class="decoration">&#x2015;</span>Certifications<span class="decoration">&#x2015;</span></h1>
     <div class="row" id="certs">
+      <div class="collapse_hs" id="collapse_certs">X</div>
       <%= resume.text_field :first_certification, :cols => '10', :rows => '1', placeholder: "Certification" %>
       <%= resume.text_field :second_certification, :cols => '10', :rows => '1', placeholder: "Certification" %>
       <%= resume.text_field :third_certification, :cols => '10', :rows => '1', placeholder: "Certification" %>
@@ -250,6 +255,7 @@
 
     <h1 id="title_hobby"><span class="decoration">&#x2015;</span>Hobbies<span class="decoration">&#x2015;</span></h1>
     <div class="row" id="hobby">
+      <div class="collapse_hs" id="collapse_hobbies">X</div>
       <%= resume.text_field :first_hobby, :cols => '10', :rows => '1', placeholder: "Hobby", :class => 'input_box' %>
       <%= resume.text_field :second_hobby, :cols => '10', :rows => '1', placeholder: "Hobby", :class => 'input_box' %>
       <%= resume.text_field :third_hobby, :cols => '10', :rows => '1', placeholder: "Hobby", :class => 'input_box' %>

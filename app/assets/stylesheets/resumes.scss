@@ -7,7 +7,11 @@
   font-family: "Trajan Sans Pro", sans-serif;
   margin-top:0px;
   margin-bottom:0px;
+  cursor: pointer;
+}
 
+.level:hover {
+  color: #cc9966;
 }
 
 h1 {
@@ -52,6 +56,28 @@ h1 {
   margin-bottom: 2%;
 }
 
+#high_school_collapse {
+  margin-top: -1.5%;
+  margin-bottom: .5%;
+}
+
+.collapse_hs{
+  background-color: #6699cc;
+  color: #cc9966;
+  border-radius: 50%;
+  height: 1%;
+  width: 1.5%;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.collapse_hs:hover {
+  background-color: #cc9966;
+  color: #6699cc;
+}
+
 //undergrad stuff
 #undergrad {
   display: none;
@@ -62,6 +88,11 @@ h1 {
   display: none;
   margin-top: 5%;
   font-family: "Gill Sans", sans-serif;
+}
+
+#undergrad_collapse {
+  margin-top: .5%;
+  margin-bottom: -1%;
 }
 
 #undergrad_class {
@@ -137,6 +168,7 @@ h1 {
   font-family: "Gill Sans", sans-serif;
 }
 
+
 #volunteer {
   display: none;
   font-family: "Gill Sans", sans-serif;
@@ -148,6 +180,10 @@ h1 {
   font-family: "Gill Sans", sans-serif;
 }
 
+#collapse_voluntary {
+  margin-bottom:.5%;
+}
+
 #certs {
   display: none;
   font-family: "Gill Sans", sans-serif;
@@ -156,6 +192,10 @@ h1 {
 #title_cert {
   display: none;
   font-family: "Gill Sans", sans-serif;
+}
+
+#collapse_certs {
+  margin-bottom: .5%;
 }
 
 //hobies
@@ -170,6 +210,10 @@ h1 {
   font-family: "Gill Sans", sans-serif;
 }
 
+#collapse_hobbies {
+  margin-bottom: .5%;
+}
+
 //submit
 
 .submit{
@@ -181,4 +225,9 @@ h1 {
   font-size: 50px;
   border-radius: 10%;
   text-align: center;
+}
+
+.submit:hover {
+  color: #cc9966;
+  background-color: white;
 }
