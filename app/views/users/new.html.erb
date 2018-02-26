@@ -68,13 +68,13 @@
 
       <div class="row text" id="user_info">
         <div class="row text">
-          <%= user.text_field :name, :placeholder => 'Your username', :class => 'user_info' %>
+          <%= user.text_field :name, :placeholder => 'Your username', :class => 'user_info', :required => 'required' %>
         </div>
         <div class="row text">
-          <%= user.email_field :email, :placeholder => 'Email', :class => 'user_info' %>
+          <%= user.email_field :email, :placeholder => 'Email', :class => 'user_info', :required => 'required' %>
         </div>
         <div class="row text">
-          <%= user.password_field :password, :placeholder => 'Password', :id => "identity", :class => 'user_info' %>
+          <%= user.password_field :password, :placeholder => 'Password', :id => "identity", :class => 'user_info', :required => 'required' %>
         </div>
       </div>
 
