@@ -35,8 +35,8 @@
     <%= image_tag 'logo.svg', :class => 'logo', :id => 'login_logo' %>
     <h1 class="motto">Pay It Forward</h1>
     <%= form_for(:session, url: login_path) do |user| %>
-      <%= user.email_field :email, :placeholder => 'Email', :class => 'text' %>
-      <%= user.password_field :password, :placeholder => 'Password', :class => 'text' %>
+      <%= user.email_field :email, :placeholder => 'Email', :class => 'text', :required => 'required' %>
+      <%= user.password_field :password, :placeholder => 'Password', :class => 'text', :required => 'required' %>
 
       <%= user.submit "Login", :class => "btn more" %>
       <% end %>
