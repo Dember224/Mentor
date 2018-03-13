@@ -15,7 +15,14 @@ class ResumesController < ApplicationController
     redirect_to '/pairs' and return
   end
 
+  def edit
+    @current_resume = Resume.find_by_user_id(current_user.id)
+  end
+
   def update
+    @current_resume = Resume.find_by_user_id(current_user.id)
+    @current_resume.update(resume_params)
+    redirect_to '/hub/:id' and return
   end
 
   private
