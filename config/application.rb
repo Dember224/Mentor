@@ -15,5 +15,18 @@ module Mentor
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address => 'smtp.gmail.com',
+      :domain => 'mail.google.com',
+      :user_name => 'Telemachus.Mentors@gmail.com',
+      :password => 'Eric&LarrySons',
+      :port => 465,
+      :authentication => :plain,
+      enable_starttls_auto: true
+    }
+
+    
+
   end
 end
