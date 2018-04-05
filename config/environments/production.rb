@@ -88,4 +88,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.delivery_method = :smtp
+  config.smtp_settings = {
+    address: 'smtp.gmail.com',
+    domain: 'mail.google.com',
+    user_name: 'Telemachus.Mentors@gmail.com',
+    password: 'Eric&LarrySons',
+    port: 587,
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 end

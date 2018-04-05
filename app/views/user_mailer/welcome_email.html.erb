@@ -5,10 +5,10 @@
   </head>
   <body>
 
-    <h1>Hi @user.name, Welcome to Telemachus!</h1>
+    <h1>Hi<%= @user.name %>, Welcome to Telemachus!</h1>
     <p>Thanks for signing up.</p>
     <p>We're looking forward to working with you.</p>
-    <p> To login just click the link<a href='telemachus.heokuapp.com/login'>here</a>.</p>
+    <p> To login just click the link<%= @url %>.</p>
     <%= image_tag "logo.svg", :class => "mentor" %>
   </body>
   </html>
