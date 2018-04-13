@@ -5,10 +5,10 @@
   </head>
   <body>
 
-    <h1>Hi<%= @user.name %>, Welcome to Telemachus!</h1>
+    <h1>Hi <%= @user.name %>, Welcome to Telemachus!</h1>
     <p>Thanks for signing up.</p>
     <p>We're looking forward to working with you.</p>
-    <p> To login just click the link<%= @url %>.</p>
-    <%= attachments.inline["logo.svg"] = File.read("#{Rails.root}/app/assets/images/logo.svg"), :class => "mentor" %>
+    <p> To login just click the link <%= @url %>.</p>
+  <img src= "https://image.ibb.co/gNfkpx/logo.png" />
   </body>
   </html>
