@@ -15,7 +15,13 @@ class PairsController < ApplicationController
 
   def create
     @pair = Pair.new(pair_params)
-    @pair.save
+
+    if @pair.save
+      if agreed.is_a?(Integer)
+        PairsMailer.match_email(User.find_by_id(current_user.id).email).deliver_now
+        PairsMailer.match_email(User.find_by_id(agreed).email).deliver_now
+      end
+    end
   end
 
   def has_degree
