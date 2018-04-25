@@ -8,7 +8,20 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @message.save
+    @last_message =
+      if (@user != nil)
+        Message.find_by_from(User.find_by_email(@user).id)
+      elsif @user == nil && defined?(current_user) != nil
+        Message.find_by_from(User.find(current_user.id).id)
+      end
+    if @message.save
+      if @last_message.class != Array
+        MessageMailer.message_email(User.find_by_id(@last_message.to).email).deliver_now
+      else
+        MessageMailer.message_email(User.find_by_id(@last_message.last.to).email).deliver_now
+      end
+      redirect_to '/message' and return
+    end
   end
 
   def index
