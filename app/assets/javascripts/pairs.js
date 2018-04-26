@@ -5,7 +5,7 @@
 
 document.addEventListener("turbolinks:load",function() {
   $('.resume').hide()
-  $('.btn').click(function() {
+  $('.more').click(function() {
     $(this).next().slideToggle("slow")
   });
 });
