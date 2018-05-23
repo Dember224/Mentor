@@ -34,119 +34,122 @@
 
   <div class="container">
     <p>Welcome back <%= current_user.name %>!</p>
-    <div class="options">
-      <% if mentor? %>
-        <button class="more"><a href="/message">Message your mentees</a></button>
-      <% else %>
-        <button class="more"><a href="/message">Message your mentors</a></button>
-      <% end %>
-      <% if @my_resume == nil %>
-        <button class="more"><a href="/resume">Complete a resume</a></button>
-      <% end %>
-      <% if mentor? %>
-        <button class="more"><a href="/pairs">Find another mentee</a></button>
-      <% else %>
-        <button class="more"><a href="/pairs">Find another mentor</a></button>
-      <% end %>
-    </div>
-    <div class="matches">
-			<% if @my_pair != nil %>
-      <% if mentor? %>
-        <p>Here are your current mentees:</p>
-				<% [@resume].each do |resume| %>
-          <% [@match_user].each do |user| %> <!--I need to edit this to display several matches properly -->
-						<% if user.id == resume.user_id %>
-							<%= user.name %>
-						<% end %>
-					<% end %>
-					<button class="more">Resume</button>
-          <div class="resume">
-            <p><% @resume_items.each do |item| %>
-              <% if resume[item] != "" && resume[item] != nil %>
-							<% case item %>
-							<% when "high_school" %>
-								<h3>High School</h3>
-							<% when "undergrad_uni" %>
-								<h3>Undergraduate</h3>
-								<br>
-							<% when "second_undergrad_uni" %>
-								<br>
-							<% when "advanced_degree_type" %>
-								<br>
-							<% when "second_advanced_degree_type" %>
-								<br>
-							<% when "first_company_name" %>
-								<h3>Job History</h3>
-								<br>
-							<% when "second_company_name" %>
-								<br>
-							<% when "third_company_name" %>
-								<br>
-							<% when "fourth_company_name" %>
-								<br>
-							<% when "first_volunteer_organization" %>
-								<h3>Volunteerism</h3>
-								<br>
-							<% when "first_hobby" %>
-								<h3>Hobbies</h3>
-								<br>
+		<% if @my_pair != nil && @matched_you_back %>
+    	<div class="options">
+      	<% if mentor? %>
+        	<button class="more"><a href="/message">Message your mentees</a></button>
+      	<% else %>
+        	<button class="more"><a href="/message">Message your mentors</a></button>
+      	<% end %>
+      	<% if @my_resume == nil %>
+        	<button class="more"><a href="/resume">Complete a resume</a></button>
+      	<% end %>
+      	<% if mentor? %>
+        	<button class="more"><a href="/pairs">Find another mentee</a></button>
+      	<% else %>
+        	<button class="more"><a href="/pairs">Find another mentor</a></button>
+      	<% end %>
+    	</div>
+    	<div class="matches">
+      	<% if mentor? %>
+        	<p>Here are your current mentees:</p>
+					<% [@resume].each do |resume| %>
+          	<% [@match_user].each do |user| %> <!--I need to edit this to display several matches properly -->
+							<% if user.id == resume.user_id %>
+								<%= user.name %>
 							<% end %>
+						<% end %>
+						<button class="more">Resume</button>
+          	<div class="resume">
+            <p>
+						<% @resume_items.each do |item| %>
+              <% if resume[item] != "" && resume[item] != nil %>
+									<% case item %>
+										<% when "high_school" %>
+										<h3>High School</h3>
+										<% when "undergrad_uni" %>
+										<h3>Undergraduate</h3>
+										<br>
+										<% when "second_undergrad_uni" %>
+										<br>
+										<% when "advanced_degree_type" %>
+										<br>
+										<% when "second_advanced_degree_type" %>
+										<br>
+										<% when "first_company_name" %>
+										<h3>Job History</h3>
+										<br>
+										<% when "second_company_name" %>
+										<br>
+										<% when "third_company_name" %>
+										<br>
+										<% when "fourth_company_name" %>
+										<br>
+										<% when "first_volunteer_organization" %>
+										<h3>Volunteerism</h3>
+										<br>
+										<% when "first_hobby" %>
+										<h3>Hobbies</h3>
+										<br>
+									<% end %>
 
-
-                <b><%= "#{item}".capitalize.gsub(/_/, " ") %>:</b>
-                <%= resume[item] %>
+                	<b><%= "#{item}".capitalize.gsub(/_/, " ") %>:</b>
+                	<%= resume[item] %>
               <% end %>
             <% end %>
-						<% end %>
+					<% end %>
             </p>
           </div>
 
-          <% else %>
+        <% else %>
           <p>Here are your current mentors:</p>
 					<% [@resume].each do |resume| %>
-					<% [@match_user].each do |user| %> <!--I need to edit this to display several matches properly -->
-						<% if user.id == resume.user_id %>
-							<%= user.name %>
-						<% end %>
+						<% [@match_user].each do |user| %> <!--I need to edit this to display several matches properly -->
+							<% if user.id == resume.user_id %>
+								<%= user.name %>
+							<% end %>
 					<% end %>
 					<button class="btn more">Resume</button>
           <div class="resume">
-            <p><% @resume_items.each do |item| %>
-              <% if resume[item] != "" && resume[item] != nil %>
-								<% case item %>
-								<% when "high_school" %>
-									<h3>High School</h3>
-								<% when "undergrad_uni" %>
-									<h3>Undergraduate</h3>
-									<br>
-								<% when "second_undergrad_uni" %>
-								 	<br>
-								<% when "advanced_degree_type" %>
-									<br>
-								<% when "second_advanced_degree_type" %>
-									<br>
-								<% when "first_company_name" %>
-									<h3>Job History</h3>
-									<br>
-								<% when "second_company_name" %>
-									<br>
-								<% when "third_company_name" %>
-									<br>
-								<% when "fourth_company_name" %>
-									<br>
-								<% when "first_volunteer_organization" %>
-									<h3>Volunteerism</h3>
-									<br>
-								<% when "first_hobby" %>
-									<h3>Hobbies</h3>
-									<br>
-								<% end %>
-                <b><%= "#{item}".capitalize.gsub(/_/, " ") %>:</b>
-                  <%= resume[item] %>
-              <% end %>
+      		<p>
+					<% @resume_items.each do |item| %>
+            <% if resume[item] != "" && resume[item] != nil %>
+							<% case item %>
+										<% when "high_school" %>
+											<h3>High School</h3>
+										<% when "undergrad_uni" %>
+											<h3>Undergraduate</h3>
+											<br>
+										<% when "second_undergrad_uni" %>
+								 			<br>
+										<% when "advanced_degree_type" %>
+											<br>
+										<% when "second_advanced_degree_type" %>
+											<br>
+										<% when "first_company_name" %>
+											<h3>Job History</h3>
+											<br>
+										<% when "second_company_name" %>
+											<br>
+										<% when "third_company_name" %>
+											<br>
+										<% when "fourth_company_name" %>
+											<br>
+										<% when "first_volunteer_organization" %>
+											<h3>Volunteerism</h3>
+											<br>
+										<% when "first_hobby" %>
+											<h3>Hobbies</h3>
+											<br>
+							<% end %>
+              <b><%= "#{item}".capitalize.gsub(/_/, " ") %>:</b>
+              <%= resume[item] %>
             <% end %>
-					<% end %>
-      <% end %>
+          <% end %>
+				<% end %>
+    <% end %>
+		<% else %>
+			<button class="more"><a href= "/pairs">Find A Match</a></button>
 			<% end %>
     </div>
   </div>
