@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   delete 'logout' => 'sessions#destroy'
+  resources :pairs
   get '/pairs' => 'pairs#new'
   post 'pairs' => 'pairs#create'
+  get '/pairs/:user_id' => 'pairs#show'
+  delete '/pairs/:id' => 'pairs#delete'
   get '/message' => 'messages#new'
   post 'message' => 'messages#create'
   resources :messages

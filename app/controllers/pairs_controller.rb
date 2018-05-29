@@ -118,6 +118,20 @@ class PairsController < ApplicationController
 
 helper_method :agreed
 
+def show
+  @my_pairs = Pair.find_by_user_id(current_user.id)
+end
+
+def destroy
+  @my_pairs = Pair.find(params[:id])
+  @my_pairs.delete
+  redirect_to '/hub/:id' and return
+end
+
+def update
+  @my_pairs = Pair.find_by_user_id(:user_id)
+end
+
 private
   def pair_params
     params.require(:pair).permit(:user_id, :mentee_id, :message)
